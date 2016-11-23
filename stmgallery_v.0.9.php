@@ -1755,13 +1755,13 @@ function stmpili_funcion_pieza_libre_ancho_mayor( ) {
 
 	$alto_pila = count( $stmpili_pila );
 	$pieza = 0;
-	$ancho_mayor = 0;
+	$area_mayor = 0;
 	
 	for ( $contador = 1; $contador < $alto_pila + 1; $contador++ ) {
-		if ( $stmpili_pila[$contador]['colocada'] == false && $stmpili_pila[$contador]['ancho'] > $ancho_mayor ) {
+		if ( $stmpili_pila[$contador]['colocada'] == false && $stmpili_pila[$contador]['ancho']*$stmpili_pila[$contador]['alto'] > $area_mayor ) {
 			
 			$pieza = $contador;
-			$ancho_mayor = $stmpili_pila[$contador]['ancho'];
+			$area_mayor = $stmpili_pila[$contador]['ancho']*$stmpili_pila[$contador]['alto'];
 			
 		}
 	}
